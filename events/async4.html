@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const randomcolour=()=>{
+        const hex="123456789ABCDEF";
+        let color='#';
+        for (let index = 0; index < 6; index++) {
+            color+=hex[ Math.floor( Math.random()*16)]
+            
+        }
+      return color;
+    };
+
+    const setBackgruoundColor=  ()=>{
+        document.body.style.backgroundColor=randomcolour();
+    }
+let intervalId;
+document.querySelector('#start').addEventListener('click',(e)=>{
+    if(!intervalId){
+        intervalId= setInterval(setBackgruoundColor,1000,"saroj");
+    }
+    
+},false);
+
+document.querySelector('#stop').addEventListener('click',(e)=>{
+    clearInterval(intervalId);
+    intervalId=null;
+},false);
+
+
+</script>
+</html>

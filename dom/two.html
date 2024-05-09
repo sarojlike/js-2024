@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    //getting parent and Child element
+   const parent = document.querySelector('.parent');
+   
+    console.log(parent);
+    console.log(parent.children);//this line will give Html collection of Children element
+    console.log(parent.children[0].innerHTML);
+    parent.children[0].style.color="orange"
+
+    // iterating through HML collection using simple for loop
+    //Note we cannot use foreach or for off loop as HTML collection is not an array
+    for (let index = 0; index < parent.children.length; index++) {
+        console.log(parent.children[index].innerHTML);
+        
+    }
+
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne);
+
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+    console.log(dayOne.previousElementSibling);
+
+
+    console.log("NODES: ", parent.childNodes);//this line will print all nodes inside parent element
+
+</script>
+</html>

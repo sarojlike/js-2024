@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+let printDateName = (name)=>{
+    console.log(name,Date.now());
+}
+let intervalId ;
+
+document.querySelector('#start').addEventListener('click',(e)=>{
+
+    intervalId= setInterval(printDateName,1000,"saroj");
+
+},false);
+
+document.querySelector('#stop').addEventListener('click',(e)=>{
+
+clearInterval(intervalId);
+intervalId=null;
+
+},false);
+
+</script>
+</html>
